@@ -12,12 +12,11 @@ const Contact = () => {
     setStatus('Sending...');
 
     try {
-      // const response = await fetch('http://localhost:5000/contact', {
       const response = await fetch("https://portfolio-back-cgrx.onrender.com/contact", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ name, email, message })
-});
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: formData.name, email: formData.email, message: formData.message })
+      });
 
       const data = await response.json();
       setStatus(data.message);
@@ -41,7 +40,7 @@ const Contact = () => {
         <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://leetcode.com/yourusername" target="_blank" rel="noreferrer">LeetCode</a>
- </div>
+      </div>
     </section>
   );
 };
