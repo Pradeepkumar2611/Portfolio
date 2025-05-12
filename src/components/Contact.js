@@ -13,12 +13,11 @@ const Contact = () => {
 
     try {
       // const response = await fetch('http://localhost:5000/contact', {
-      const response = await fetch('https://your-backend-name.onrender.com/contact', {
-
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch('https://portfolio-back-cgrx.onrender.com/contact', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name, email, message })
+});
 
       const data = await response.json();
       setStatus(data.message);
