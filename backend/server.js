@@ -5,34 +5,36 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 
-// Middleware
-const cors = require('cors');
-
+// ✅ CORS fix
 app.use(cors({
-  origin: 'https://idyllic-puffpuff-55fba2.netlify.app',
+  origin: process.env.FRONTEND_URL || 'https://idyllic-puffpuff-55fba2.netlify.app',
   methods: ['POST', 'GET', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
+  allowedHeaders: ['Content-Type']
 }));
 
 app.use(express.json());
 
-// Nodemailer setup
+// ✅ Health check route
+app.get('/', (req, res) => {
+  res.send('Backend is running ✅');
+});
+
+// ✅ Nodemailer config
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
-  secure: true, // SSL
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD
   }
 });
 
-// POST /contact
+// ✅ Contact route
 app.post('/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
-    console.log('Validation failed: Missing fields');
     return res.status(400).json({ error: 'All fields are required' });
   }
 
@@ -51,17 +53,15 @@ app.post('/contact', async (req, res) => {
       `
     });
 
-    console.log('✅ Email sent successfully');
     res.status(200).json({ message: 'Message sent successfully!' });
   } catch (error) {
-    console.error('❌ Email error:', error);
+    console.error('Email error:', error);
     res.status(500).json({ error: 'Failed to send message' });
   }
 });
 
-// Start server
+// ✅ Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
-  console.log(`🌐 CORS allowed for: ${process.env.FRONTEND_URL}`);
 });
