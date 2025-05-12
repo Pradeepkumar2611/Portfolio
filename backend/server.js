@@ -6,9 +6,14 @@ const nodemailer = require('nodemailer');
 const app = express();
 
 // Middleware
+const cors = require('cors');
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000'
+  origin: 'https://idyllic-puffpuff-55fba2.netlify.app',
+  methods: ['POST', 'GET', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
 }));
+
 app.use(express.json());
 
 // Nodemailer setup
