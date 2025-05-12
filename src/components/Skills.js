@@ -6,6 +6,7 @@ const skills = [
   { name: "React", level: "Advanced", icon: "⚛️" },
   { name: "HTML5", level: "Advanced", icon: "📄" },
   { name: "CSS3", level: "Advanced", icon: "🎨" },
+   { name: "Java", level: "Advanced", icon: "☕" }, 
    { name: "C++", level: "Intermediate", icon: "➕" }, // Alternative: ➕
   { name: "C", level: "Intermediate", icon: "🔷" },
   { name: "Python", level: "Intermediate", icon: "🐍" },
