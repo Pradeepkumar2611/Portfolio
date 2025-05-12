@@ -29,7 +29,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact-section">
-      <h2 className="section-title">Get In Touch</h2>
+      <h2 className="section-title">Get In Touch with me</h2>
       <form className="contact-form" onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Your Name" required onChange={handleChange} />
         <input type="email" name="email" placeholder="Your Email" required onChange={handleChange} />
