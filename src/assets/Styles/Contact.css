@@ -1,0 +1,93 @@
+:root {
+  --primary-color: #3498db;
+}
+
+.contact-section {
+  padding: 60px 20px;
+  background-color: #ffffff; /* White background */
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-decoration: none; /* Remove any underline */
+  border: none;          /* Remove border */
+  outline: none;         /* Remove any focus outlines */
+  box-shadow: none;      /* Just in case */
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9; /* Slightly darker for hover */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #2980b9;
+}
+
+@media (max-width: 600px) {
+  .contact-form {
+    width: 90%;
+  }
+}

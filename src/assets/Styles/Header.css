@@ -1,0 +1,93 @@
+/* Header.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 1.5rem 2rem;
+  margin: 0;
+}
+
+.nav-list li {
+  margin: 0 1.2rem;
+  position: relative;
+}
+
+.nav-list li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #2c3e50;
+}
+
+.nav-list li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+/* Active link style */
+.nav-list li a.active {
+  color: #3498db;
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background-color: white;
+    padding: 2rem 0;
+    transition: left 0.3s ease;
+  }
+
+  .nav-list.active {
+    left: 0;
+  }
+
+  .nav-list li {
+    margin: 1rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
