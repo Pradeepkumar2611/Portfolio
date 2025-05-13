@@ -37,9 +37,9 @@ const Contact = () => {
       </form>
       {status && <p style={{ marginTop: '10px' }}>{status}</p>}
       <div className="social-links">
-        <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://leetcode.com/yourusername" target="_blank" rel="noreferrer">LeetCode</a>
+        <a href="https://github.com/Pradeepkumar2611" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/pradeepkumar-m-717237350/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://leetcode.com/u/Pradeepkumar26/" target="_blank" rel="noreferrer">LeetCode</a>
       </div>
     </section>
   );
